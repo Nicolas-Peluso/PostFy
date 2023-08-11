@@ -1,17 +1,27 @@
-import {useState} from "react";
+import {useContext, useEffect} from "react";
 import Style from "./Header.module.css"
 import userImage from "../../assets/user.svg"
 import UserModal from "../UserModal/UserModal";
+import { context } from "../../usercontext/context";
 
 function Header(){
-const [visible, setVisible] = useState(false);
+const {isVisible, setVisibility} = useContext(context)
 
-    return (
+//close modal lógica
+useEffect(() => {
+    function breakAnimation(event){
+        if(event.target.className != 'Header_teste__CJn+k' && event.target.className != 'UserModal_ModalContainer__3PIgN') setVisibility(false)  
+    }
+    document.addEventListener("click", event => breakAnimation(event))
+    return () => document.removeEventListener("click", breakAnimation)
+}, [isVisible])
+
+return (
         <header className={Style.Header}>
             <nav className={Style.Container}>
                 <ul>
-                    <li onClick={() => setVisible(!visible)}>
-                        <img src={userImage} alt="imagem usuario" />
+                    <li onClick={() => setVisibility(!isVisible)}>
+                        <img src={userImage} alt="imagem usuario" className={Style.teste}/>
                     </li>
                     <li>
                         <p>TabNicolas</p>
@@ -26,7 +36,7 @@ const [visible, setVisible] = useState(false);
                         <img src={userImage} alt="imagem usuario" />
                     </li>
                     <li className={Style.liModal}>
-                        {visible ? <UserModal/> : <></>}
+                        {isVisible ? <UserModal/> : <></>}
                     </li>
                 </ul>
             </nav>

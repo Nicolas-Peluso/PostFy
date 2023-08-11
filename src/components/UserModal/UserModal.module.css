@@ -6,7 +6,7 @@
     border-radius: 5px;
     display: flex;
     justify-content: center;
-    animation: in .3s ease-in-out;
+    animation: in .1s ease-in-out;
 }
 
 .ModalContainer ul{

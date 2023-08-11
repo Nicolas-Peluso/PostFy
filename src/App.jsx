@@ -1,11 +1,17 @@
 import Header from "./components/Header/Header";
 import "../src/App.css"
+import {ContextGlobal, context} from "./usercontext/context"
 
 function App() {
   return (
-    <div className='App'>
-      <Header/>
-    </div>
+    <>
+    <ContextGlobal>
+        <div>
+          <Header/>
+          
+        </div>
+      </ContextGlobal>
+    </>
   );
 }
 

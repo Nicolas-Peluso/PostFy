@@ -4,6 +4,10 @@
     display: inline-block;
 }
 
+.teste{
+    width: 100%;
+}
+
 .Container{
     display: flex;
     flex-direction: row;
