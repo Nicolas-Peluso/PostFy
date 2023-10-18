@@ -20,3 +20,11 @@ enfim esse projeto vai servir tanto para praticar coisas novas quanto para "rele
 
 nao espero que seja um projeto de 1 semana
 
+<h1>Pausa no projeto<h1>
+<p>
+atualmente estou estudando django para prosseguir com o postfy o problema é que para criar uma api rest com django eu preciso primeiro aprender django de forma completa e isso me custara um tempo
+então vou paralizar temporariamente esse projeto e vou começar dois novos menores mas que possam ser atualizados com maior frequencia para que possa fixar o conteudo
+os projetos serão:
+    uma versão do postfy mas sem react e sem api rest sendo o modelo "tradicional" com banco de dados não relacional, o front sendo renderizado junto ao back.
+    e um sistema de gerencia para restaurantes, com sistema de pedidos, lista de pedidos, estoque, fchamento de caixa etc...
+<p>

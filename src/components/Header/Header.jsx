@@ -10,11 +10,11 @@ const {isVisible, setVisibility} = useContext(context)
 //close modal lógica
 useEffect(() => {
     function breakAnimation(event){
-        if(event.target.className != 'Header_teste__CJn+k' && event.target.className != 'UserModal_ModalContainer__3PIgN') setVisibility(false)  
+        if(event.target.className !== 'Header_teste__CJn+k' && event.target.className !== 'UserModal_ModalContainer__3PIgN') setVisibility(false)  
     }
     document.addEventListener("click", event => breakAnimation(event))
-    return () => document.removeEventListener("click", breakAnimation)
-}, [isVisible])
+    return () => document.removeEventListener("click", event => breakAnimation(event))
+}, [isVisible, setVisibility])
 
 return (
         <header className={Style.Header}>
